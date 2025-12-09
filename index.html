@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Manik Refrigeration — Exact Match V6 (Responsive Marquee)</title>
+  <title>Manik Refrigeration</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
   
@@ -27,15 +27,16 @@
         position: relative;
     }
     .section-heading-underline::after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 3px; /* Thickness of the underline in the design */
-        background-color: var(--brand);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--brand);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
 
     /* Custom style for the repeating 24x7 strip */
     .support-strip {
@@ -43,12 +44,13 @@
         white-space: nowrap; /* Prevent items from wrapping */
     }
     .support-strip-inner {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
         /* Animation: This keyframe is defined later for better readability */
         animation: marquee 30s linear infinite; 
     }
     .support-strip-item {
-        font-size: 1.25rem; /* 20px */
+        font-size: 30px; /* 20px */
         font-weight: 700; /* Bold */
         color: var(--brand);
         padding: 10px 30px;
@@ -60,6 +62,22 @@
     }
    
 
+.text-underliner{
+        display: inline-block;
+        padding-bottom: 5px;
+        position: relative;
+    }
+    .text-underliner::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -6px;
+    left: 0%;
+    /* transform: translate(-50%); */
+}
     /* Keyframe for the Marquee animation */
     @keyframes marquee {
         0% { transform: translate3d(0, 0, 0); }
@@ -70,30 +88,17 @@
     .btn-brand {
         background-color: var(--brand);
         color: white;
-        padding: 10px 30px;
-        border-radius: 9999px; /* Full pill shape */
+        padding: 10px 40px;
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 20px;
     }
 
     /* --- SLICK SLIDER CUSTOM STYLES for NEW ARROWS --- */
     .slick-prev:before, .slick-next:before {
         display: none !important;
     }
-    .slick-dots {
-        bottom: -30px; 
-    }
-    
-    .slick-prev, .slick-next {
-        width: 40px;
-        height: 40px;
-        z-index: 10;
-        border-radius: 50%;
-        background-color: white; 
-        border: 2px solid var(--brand); 
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s;
-    }
+
+  
     .slick-prev:hover, .slick-next:hover {
         background-color: #f0f8ff; 
     }
@@ -101,323 +106,389 @@
     .slick-prev { left: -50px; }
     .slick-next { right: -50px; }
     
-    .slick-prev:after {
-        content: '<'; 
-        font-size: 20px;
-        color: var(--brand);
-        line-height: 1;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    .slick-arrow {
+    left: 50% !important;
+    top: 108%;
+}
 
-    .slick-next:after {
-        content: '>'; 
-        font-size: 20px;
-        color: var(--brand);
-        line-height: 1;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
 
+
+button.slick-prev.slick-arrow {
+    left: 49% !important;
+}
+    .service-card-list li::marker {
+    content: '• ';
+    color: var(--brand-blue);
+  }
+  .service-card-listcard svg , .product-slider svg {
+    fill: #fff;
+    width: 20px;
+  }
+  .featured_car svg{
+    width: 20px;
+  }
+  .featured_car_slider   .slick-arrow {
+    left: 50% !important;
+    top: 102%;
+}
     @media (max-width: 1024px) {
         .slick-prev { left: 10px; }
         .slick-next { right: 10px; }
         .slick-slider { margin-bottom: 50px; }
+    }
+    @media (max-width:999px) {
+      .slick-arrow{
+        top:103%
+      }
+
+button.slick-prev.slick-arrow {
+    left: 46% !important;
+}
+    }
+    @media (max-width:500px) {
+      .btn-brand {
+       border-radius: 10px !important;
+        padding: 5px 20px;
+        font-weight: 600;
+        font-size: 16px !important;
+    }
     }
   </style>
 </head>
 <body class="antialiased bg-white">
 
   <header class="flex items-center justify-between px-6 md:px-12 py-4 bg-white shadow-sm sticky top-0 z-40">
-    <div class="flex items-center gap-3 w-[260px] lg:w-[260px]">
-     <img src="/files/Logo.webp" alt="Manik Refrigeration Logo" class=""/> 
+    <div class="flex items-center gap-3 w-[260px] max-[500px]:w-[160px]">
+     <img loading="lazy" src="/files/Logo.webp" alt="Manik Refrigeration Logo" class=""/> 
     </div>
     <div class="flex items-center gap-6 md:gap-[80px]">
-    <nav class="hidden lg:flex gap-16 text-[18px] font-semibold text-[var(--brand)]">
+    <nav class="hidden lg:flex gap-16 text-[21px] font-[100] text-[var(--brand)]">
       <a href="#" class="border-b-2 border-[var(--brand)]">Home</a>
       <a href="#about"  class="hover:border-b-2 hover:border-gray-200">About Us</a>
       <a href="#services" class="hover:border-b-2 hover:border-gray-200">Services</a>
       <a href="#projects" class="hover:border-b-2 hover:border-gray-200">Projects</a>
       <a href="#contact" class="hover:border-b-2 hover:border-gray-200">Contact</a>
     </nav>
-    <a href="#contact" class="btn-brand text-base !rounded-[20px]">Call Now</a>
+    <a href="#contact" class="btn-brand  rounded-[18px]">Call Now</a>
     </div>
   </header>
 
-  <section class="relative h-[450px] md:h-[65vh] overflow-hidden">
-    <img src="/files/manik_banner.webp" alt="Air Conditioning and Refrigeration Solution" class="w-full h-full object-cover"/>
+  <section class="relative h-auto md:h-full overflow-hidden">
+    <img loading="lazy" src="/files/manik_banner.webp" alt="Air Conditioning and Refrigeration Solution" class="w-full h-full object-cover"/>
   </section>
 
-  <section class="support-strip bg-white py-1 md:py-3 border-y border-gray-100">
+  <section class="support-strip bg-white py-5 md:py-20 border-y border-gray-100">
     <div class="support-strip-inner">
-      <span class="support-strip-item">24×7 Support  </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
+      <span class="support-strip-item">24×7 Support  </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
       
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
-      <span class="support-strip-item">24×7 Support   </span> <span class="relative res_1"><span class="text-[var(--brand)] text-[101px] leading-[45px] "> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
+      <span class="support-strip-item">24×7 Support   </span> <span class="relative inline-flex items-center w-10 h-10"><span class="text-[var(--brand)] text-[101px] leading-[45px]   absolute top-[30%] left-0 -translate-1/2"> *</span> </span>
     </div>
   </section>
 
-  <main class="pt-3">
-    <section id="about" class="flex flex-col lg:flex-row mb-20">
-      <div class="w-full lg:w-2/5">
-        <img src="/files/img_1.webp" alt="Manik Refrigeration Team" class="object-cover w-full h-full min-h-[300px] lg:min-h-0" />
+  <main class="">
+    <section id="about" class="flex flex-col items-center min-[1200px]:flex-row mb-20">
+      <div class="w-full ">
+        <img loading="lazy" src="/files/img_1.webp" alt="Manik Refrigeration Team" class="object-cover w-full h-full" />
       </div>
-      <div class="w-full lg:w-3/5 bg-[var(--brand)] px-8 md:px-[60px] py-10 md:py-[70px]">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+    
+      <div class="w-full  relative ">
+        <div class="min-[1200px]:absolute min-[1200px]:right-0 min-[1200px]:top-1/2 min-[1200px]:-translate-y-1/2 w-full min-[1200px]:w-[104%] bg-[var(--brand)] px-8 md:px-[40px] py-10 md:py-[60px] min-[1200px]:rounded-l-[20px]">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
             <span class="section-heading-underline after:bg-white after:h-[2px]">About Us</span>
-        </h2>
-        <p class="text-white text-base leading-relaxed mb-4">
-            With a collective experience of over 25 years in HVAC and refrigeration, our expert team at Manik Refrigeration Sales & Service 
+          </h2>
+          <p class="text-white text-base leading-relaxed mb-4">
+            With a collective experience of <b>over 25 years</b> in HVAC and refrigeration, our expert team at Manik Refrigeration Sales & Service
             ensures precision, reliability, and excellence in every project.
-        </p>
-        <p class="text-white text-base leading-relaxed mb-4">
-            Recognized for its commitment to quality and reliability, Manik Refrigeration Sales & Service is a leading name in the refrigeration and 
-            air-conditioning sector. We operate across India with leading companies, handling projects in Cold Chain, Refrigeration, Fresh & 
-            Vegetable Chillers (F&V), and VRF/VRV systems.
-        </p>
-        <p class="text-white text-base leading-relaxed mb-4">
-            We specialize in supplying, installing, commissioning, and maintaining a wide range of systems, including Cold Rooms, VRV/VRF
-             systems, Refrigeration Units, and Air Conditioning equipment for major retail chains and businesses.
-        </p>
-        <p class="text-white text-base leading-relaxed mb-4">
+          </p>
+          <p class="text-white text-base leading-relaxed mb-4">
+            Recognized for its commitment to quality and reliability, Manik Refrigeration Sales & Service is a leading name in the refrigeration and<br>
+            air-conditioning sector. We operate across India with leading companies, handling projects in Cold Chain, Refrigeration, Fresh & Vegetable
+            Chillers (F&V), and VRF/VRV systems.
+          </p>
+          <p class="text-white text-base leading-relaxed mb-4">
+            We specialize in supplying, installing, commissioning, and maintaining a wide range of systems, including Cold Rooms, VRV/VRF systems, 
+            Refrigeration Units, and Air Conditioning equipment for major retail chains and businesses.
+          </p>
+          <p class="text-white text-base leading-relaxed mb-4">
             To ensure smooth and trouble-free operation throughout the year, we also offer Annual Maintenance Contracts (AMC).
-        </p>
-        <p class="text-white text-base leading-relaxed mb-4">
-            In addition, we offer consultancy services for diverse refrigeration solutions such as open-type chillers, cold rooms, deep freezers, and VRF setups.
-        </p>
-        <p class="text-white text-base leading-relaxed">
-            Our focus remains on delivering prompt, reliable, and high-quality service, fostering long-term and strong business relationships with our clients.
-        </p>
+          </p>
+        </div>
       </div>
     </section>
 
-    <section id="services" class="mb-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <h3 class="text-3xl md:text-[32px] text-center font-bold text-[var(--brand)] mb-8">
+
+    <section id="services" class="mb-24 px-6 md:px-12 max-w-[1600px] mx-auto">
+      <h3 class="text-3xl md:text-[30px] text-center font-bold text-[var(--brand)] mb-8 md:mb-12">
           <span class="section-heading-underline">Our Services</span>
       </h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white rounded-xl shadow-lg p-4 pb-6 text-center border border-gray-100">
-          <img src="/files/service_1.webp" class="h-40 w-full object-cover rounded-md mb-4" alt="Air Conditioning Services" />
-          <h4 class="font-bold text-xl text-gray-800 mb-2">Air Conditioning Services</h4>
-          <p class="text-sm text-gray-500 mt-2 mb-3">Installation, servicing and maintenance.</p>
-          <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold border-b-2 border-[var(--brand)] hover:opacity-80">Read More</a>
+      <div class="service-card-listcard grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-[40px]">
+        <div class="bg-white rounded-xl  pb-6 text-center relative">
+          <img loading="lazy" src="/files/service_1.webp" class=" w-full object-cover object-bottom rounded-md h-56" alt="Air Conditioning Services" />
+          <div class="flex flex-col items-start px-6 py-4 bg-[#f5f5f5] relative bottom-[4px] w-full rounded-xl  md:min-h-[185px] justify-between">
+
+         
+          <h4 class="font-light text-start text-[18px] text-[var(--brand)] mb-2">Air Conditioning Services</h4>
+          <ul class="text-[var(--brand)] text-sm text-start list-disc service-card-list space-y-1 mb-2 px-4">
+            <li> Design, supply, installation, commissioning</li><li>
+Room AC, VRV/VRF, chillers, AHU, central AC.</li>
+          </ul>
+          <a href="#" class="inline-flex gap-2 px-6 py-3  rounded-[18px] text-start !text-sm font-semibold btn-brand bg-[var(--brand)] hover:opacity-80">Book Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></a>
         </div>
-        <div class="bg-white rounded-xl shadow-lg p-4 pb-6 text-center border border-gray-100">
-          <img src="/files/service_2.webp" class="h-40 w-full object-cover rounded-md mb-4" alt="Cold Rooms & Refrigeration" />
-          <h4 class="font-bold text-xl text-gray-800 mb-2">Cold Rooms & Refrigeration</h4>
-          <p class="text-sm text-gray-500 mt-2 mb-3">Custom cold room solutions.</p>
-          <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold border-b-2 border-[var(--brand)] hover:opacity-80">Read More</a>
         </div>
-        <div class="bg-white rounded-xl shadow-lg p-4 pb-6 text-center border border-gray-100">
-          <img src="/files/service_3.webp" class="h-40 w-full object-cover rounded-md mb-4" alt="AC Repair & Maintenance" />
-          <h4 class="font-bold text-xl text-gray-800 mb-2">AC Repair & Maintenance</h4>
-          <p class="text-sm text-gray-500 mt-2 mb-3">Scheduled & emergency repairs.</p>
-          <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold border-b-2 border-[var(--brand)] hover:opacity-80">Read More</a>
+        <div class="bg-white rounded-xl  pb-6 text-center relative">
+          <img loading="lazy" src="/files/service_2.webp" class=" w-full object-cover object-bottom rounded-md h-56" alt="Air Conditioning Services" />
+          <div class="flex flex-col items-start px-6 py-4 bg-[#f5f5f5] relative bottom-[4px] w-full rounded-xl  md:min-h-[185px] justify-between">
+
+         
+          <h4 class="font-light text-start text-[18px] text-[var(--brand)] mb-2">Refrigeration & Cold Rooms</h4>
+          <ul class="text-[var(--brand)] text-sm text-start list-disc service-card-list space-y-1 mb-2 px-4">
+            <li>Design & installation of cold rooms, process 
+              cooling, labs, health facilities, clean rooms, 
+              specialized refrigeration.</li>
+          </ul>
+          <a href="#" class="inline-flex gap-2 px-6 py-3  rounded-[18px] text-start !text-sm font-semibold btn-brand bg-[var(--brand)] hover:opacity-80">Book Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></a>
         </div>
-        <div class="bg-white rounded-xl shadow-lg p-4 pb-6 text-center border border-gray-100">
-          <img src="/files/service_4.webp" class="h-40 w-full object-cover rounded-md mb-4" alt="Ducting & Installation" />
-          <h4 class="font-bold text-xl text-gray-800 mb-2">Ducting & Installation</h4>
-          <p class="text-sm text-gray-500 mt-2 mb-3">Duct design and installation.</p>
-          <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold border-b-2 border-[var(--brand)] hover:opacity-80">Read More</a>
         </div>
+        <div class="bg-white rounded-xl  pb-6 text-center relative">
+          <img loading="lazy" src="/files/service_3.webp" class=" w-full object-cover object-bottom rounded-md h-56" alt="Air Conditioning Services" />
+          <div class="flex flex-col items-start px-6 py-4 bg-[#f5f5f5] relative bottom-[4px] w-full rounded-xl  md:min-h-[185px] justify-between">
+
+         
+          <h4 class="font-light text-start text-[18px] text-[var(--brand)] mb-2">AC & Refrigeration Repair & Maintenance</h4>
+          <ul class="text-[var(--brand)] text-sm text-start list-disc service-card-list space-y-1 mb-2 px-4">
+            <li>Planned maintenance, breakdown service, AMC options.</li>
+          </ul>
+          <a href="#" class="inline-flex gap-2 px-6 py-3  rounded-[18px] text-start !text-sm font-semibold btn-brand bg-[var(--brand)] hover:opacity-80">Book Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></a>
+        </div>
+        </div>
+        <div class="bg-white rounded-xl  pb-6 text-center relative">
+          <img loading="lazy" src="/files/service_4.webp" class=" w-full object-cover object-bottom rounded-md h-56" alt="Air Conditioning Services" />
+          <div class="flex flex-col items-start px-6 py-4 bg-[#f5f5f5] relative bottom-[4px] w-full rounded-xl  md:min-h-[185px] justify-between">
+
+         
+          <h4 class="font-light text-start text-[18px] text-[var(--brand)] mb-2">Ducting & Installation Services</h4>
+          <ul class="text-[var(--brand)] text-sm text-start list-disc service-card-list space-y-1 mb-2 px-4">
+            <li>Fabrication & installation of ducting, site execution showcase.</li>
+          </ul>
+          <a href="#" class="inline-flex gap-2 px-6 py-3  rounded-[18px] text-start !text-sm font-semibold btn-brand bg-[var(--brand)] hover:opacity-80">Book Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></a>
+        </div>
+        </div>
+        
       </div>
     </section>
 
-    <section id="products" class="mb-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <h3 class="text-3xl md:text-[32px] text-center font-bold text-[var(--brand)] mb-12">
+    <section id="products" class="mb-10 md:mb-36 px-6 md:px-12">
+      <h3 class="text-3xl md:text-[30px] text-center font-bold text-[var(--brand)] mb-12">
           <span class="section-heading-underline">Our Products</span>
       </h3>
       
       <div class="product-slider relative mx-auto">
         <div class="px-3">
-            <div class="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-100">
-              <img src="/files/our_prdouct_1.webp" alt="Product: VRV/VRF" class="w-full h-48 object-cover" />
-              <div class="p-4">
-                <h4 class="font-bold text-lg text-gray-800">VRV/VRF Systems</h4>
-                <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 border-b-2 border-[var(--brand)] hover:opacity-80">View Details</a>
+            <div class="  bg-[#f5f5f5] p-4 md:p-8 ">
+              <img loading="lazy" src="/files/our_prdouct_1.webp" alt="Product: VRV/VRF" class="w-full h-full object-cover" />
+              <div class="product_ard p-4 flex items-center justify-between flex-col md:flex-row gap-2 md:gap-0">
+                <h4 class="font-bold text-sm md:text-[18px] text-[var(--brand)]">VRV/VRF Systems</h4>
+                <a href="#" class="inline-flex gap-2 px-6 py-3  rounded-[18px] text-start !text-sm font-semibold btn-brand bg-[var(--brand)] hover:opacity-80">Book Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></a>
               </div>
             </div>
         </div>
         <div class="px-3">
-            <div class="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-100">
-              <img src="/files/our_prdouct_2.webp" alt="Product: Cold Rooms" class="w-full h-48 object-cover" />
-              <div class="p-4">
-                <h4 class="font-bold text-lg text-gray-800">Cold Rooms</h4>
-                <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 border-b-2 border-[var(--brand)] hover:opacity-80">View Details</a>
+            <div class="  bg-[#f5f5f5] p-4 md:p-8  ">
+              <img loading="lazy" src="/files/our_prdouct_2.webp" alt="Product: Cold Rooms" class="w-full h-full object-cover" />
+              <div class="product_ard p-4 flex items-center justify-between flex-col md:flex-row gap-2 md:gap-0">
+                <h4 class="font-bold text-sm md:text-[18px] text-[var(--brand)]">Cold Rooms</h4>
+                <a href="#" class="inline-flex gap-2 px-6 py-3  rounded-[18px] text-start !text-sm font-semibold btn-brand bg-[var(--brand)] hover:opacity-80">Book Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></a>
               </div>
             </div>
         </div>
         <div class="px-3">
-            <div class="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-100">
-              <img src="/files/our_prdouct_3.webp" alt="Product: Display Chillers" class="w-full h-48 object-cover" />
-              <div class="p-4">
-                <h4 class="font-bold text-lg text-gray-800">Display Chillers</h4>
-                <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 border-b-2 border-[var(--brand)] hover:opacity-80">View Details</a>
+            <div class="  bg-[#f5f5f5] p-4 md:p-8 ">
+              <img loading="lazy" src="/files/our_prdouct_3.webp" alt="Product: Display Chillers" class="w-full h-full object-cover" />
+              <div class="product_ard p-4 flex items-center justify-between flex-col md:flex-row gap-2 md:gap-0">
+                <h4 class="font-bold text-sm md:text-[18px] text-[var(--brand)]">Display Chillers</h4>
+                <a href="#" class="inline-flex gap-2 px-6 py-3  rounded-[18px] text-start !text-sm font-semibold btn-brand bg-[var(--brand)] hover:opacity-80">Book Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></a>
               </div>
             </div>
         </div>
          <div class="px-3">
-            <div class="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-100">
-              <img src="/files/our_prdouct_4.webp" alt="Product: Ductable AC" class="w-full h-48 object-cover" />
-              <div class="p-4">
-                <h4 class="font-bold text-lg text-gray-800">Ductable AC Units</h4>
-                <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 border-b-2 border-[var(--brand)] hover:opacity-80">View Details</a>
+            <div class="  bg-[#f5f5f5] p-4 md:p-8 ">
+              <img loading="lazy" src="/files/our_prdouct_4.webp" alt="Product: Ductable AC" class="w-full h-full object-cover" />
+              <div class="product_ard p-4 flex items-center justify-between flex-col md:flex-row gap-2 md:gap-0">
+                <h4 class="font-bold text-sm md:text-[18px] text-[var(--brand)]">Ductable AC Units</h4>
+                <a href="#" class="inline-flex gap-2 px-6 py-3  rounded-[18px] text-start !text-sm font-semibold btn-brand bg-[var(--brand)] hover:opacity-80">Book Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></a>
               </div>
             </div>
         </div>
         <div class="px-3">
-            <div class="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-100">
-              <img src="/files/our_prdouct_1.webp" alt="Product: AHU/FCU" class="w-full h-48 object-cover" />
-              <div class="p-4">
-                <h4 class="font-bold text-lg text-gray-800">AHU/FCU</h4>
-                <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 border-b-2 border-[var(--brand)] hover:opacity-80">View Details</a>
+            <div class="  bg-[#f5f5f5] p-4 md:p-8 ">
+              <img loading="lazy" src="/files/our_prdouct_1.webp" alt="Product: AHU/FCU" class="w-full h-full object-cover" />
+              <div class="product_ard p-4 flex items-center justify-between flex-col md:flex-row gap-2 md:gap-0">
+                <h4 class="font-bold text-sm md:text-[18px] text-[var(--brand)]">AHU/FCU</h4>
+                <a href="#" class="inline-flex gap-2 px-6 py-3  rounded-[18px] text-start !text-sm font-semibold btn-brand bg-[var(--brand)] hover:opacity-80">Book Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></a>
               </div>
             </div>
         </div>
       </div>
       </section>
 
-    <section id="featured-projects" class="mb-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <h3 class="text-3xl md:text-[32px] text-center font-bold text-[var(--brand)] mb-8">
+    <section id="featured-projects" class="mt-6 md:mt-12 bg-[#f5f5f5] mb-24 ">
+      <div class="px-6 pt-8 pb-[20px] md:pt-20 md:pb-[80px] md:px-12 max-w-[1600px] mx-auto">
+      <h3 class="text-3xl md:text-[30px] text-center font-bold text-[var(--brand)] mb-8 md:mb-12">
           <span class="section-heading-underline">Featured Projects</span>
       </h3>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div class="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-100">
-          <img src="/files/featured_project1.webp" alt="Project: Cold Storage" class="w-full h-60 object-cover" />
-          <div class="p-4">
-            <h4 class="font-bold text-lg text-gray-800">Cold Storage Setup</h4>
-            <p class="text-sm text-gray-500 mt-1">Installation of a custom cold room for perishable goods.</p>
-            <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 border-b-2 border-[var(--brand)] hover:opacity-80">View Project</a>
+      <div class=" featured_car_slider ">
+        <div class="featured_car px-3">
+          <img loading="lazy" src="/files/featured_project1.webp" alt="Project: Cold Storage" class="w-full  object-cover rounded-[30px] h-[380px] md:h-[492px]" />
+          <div class="p-4 bg-[var(--brand)] rounded-[20px] flex justify-between items-center p-10 md:p-[40px] relative top-[-20px]  flex-col gap-2 md:gap-0 md:flex-row">
+            <h4 class="font-bold text-sm md:text-[18px] text-white">VRV Installation</h4>
+        
+            <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 bg-white px-6 py-3 rounded-[18px] hover:opacity-80 flex  gap-2">View More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="
+              fill: #01abed;
+          "><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"></path></svg> </a>
           </div>
         </div>
-        <div class="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-100">
-          <img src="/files/featured_project2.webp" alt="Project: Walk-in Freezer" class="w-full h-60 object-cover" />
-          <div class="p-4">
-            <h4 class="font-bold text-lg text-gray-800">Walk-in Freezer Commissioning</h4>
-            <p class="text-sm text-gray-500 mt-1">Commercial walk-in freezer for a food processing unit.</p>
-            <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 border-b-2 border-[var(--brand)] hover:opacity-80">View Project</a>
+        <div class="featured_car px-3">
+          <img loading="lazy" src="/files/featured_project2.webp" alt="Project: Walk-in Freezer" class="w-full  object-cover rounded-[30px] h-[380px] md:h-[492px]" />
+          <div class="p-4 bg-[var(--brand)] rounded-[20px] flex justify-between items-center p-10 md:p-[40px] relative top-[-20px]  flex-col gap-2 md:gap-0 md:flex-row">
+            <h4 class="font-bold text-sm md:text-[18px] text-white">Cold Room</h4>
+           
+            <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 bg-white px-6 py-3 rounded-[18px] hover:opacity-80 flex  gap-2">View More  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="
+              fill: #01abed;
+          "><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"></path></svg></a>
           </div>
         </div>
-        <div class="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-100">
-          <img src="/files/featured_project3.webp" alt="Project: Office AC" class="w-full h-60 object-cover" />
-          <div class="p-4">
-            <h4 class="font-bold text-lg text-gray-800">Commercial AC Installation</h4>
-            <p class="text-sm text-gray-500 mt-1">Large-scale AC installation for a multi-story office building.</p>
-            <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 border-b-2 border-[var(--brand)] hover:opacity-80">View Project</a>
+        <div class="featured_car px-3">
+          <img loading="lazy" src="/files/featured_project3.webp" alt="Project: Office AC" class="w-full  object-cover rounded-[30px] h-[380px] md:h-[492px]" />
+          <div class="p-4 bg-[var(--brand)] rounded-[20px] flex justify-between items-center p-10 md:p-[40px] relative top-[-20px]  flex-col gap-2 md:gap-0 md:flex-row">
+            <h4 class="font-bold text-sm md:text-[18px] text-white">AC & Refrigeration </h4>
+        
+            <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 bg-white px-6 py-3 rounded-[18px] hover:opacity-80 flex  gap-2">View More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="
+              fill: #01abed;
+          "><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"></path></svg> </a>
           </div>
         </div>
+        <div class="featured_car px-3">
+          <img loading="lazy" src="/files/featured_project2.webp" alt="Project: Walk-in Freezer" class="w-full  object-cover rounded-[30px] h-[380px] md:h-[492px]" />
+          <div class="p-4 bg-[var(--brand)] rounded-[20px] flex justify-between items-center p-10 md:p-[40px] relative top-[-20px]  flex-col gap-2 md:gap-0 md:flex-row">
+            <h4 class="font-bold text-sm md:text-[18px] text-white">Cold Room</h4>
+           
+            <a href="#" class="inline-block text-[var(--brand)] text-sm font-semibold mt-2 bg-white px-6 py-3 rounded-[18px] hover:opacity-80 flex  gap-2">View More  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="
+              fill: #01abed;
+          "><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"></path></svg></a>
+          </div>
+        </div>
+        
       </div>
+    </div>
     </section>
 
-    <section class="py-16 bg-white px-6 md:px-12 max-w-7xl mx-auto">
+    <section class="py-16 bg-white px-6 md:px-12 max-w-[1600px] mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-[var(--brand)] text-white p-8 rounded-lg shadow-xl text-center">
-                <div class="mb-4">
-                    <img src="/files/mision_1.webp" alt="Mission Icon" class="w-16 h-16 mx-auto filter brightness-0 invert" />
-                </div>
-                <h3 class="text-2xl font-bold">Our Mission</h3>
+            <div class="bg-[var(--brand)] text-white px-8 py-8 md:py-12 rounded-[30px] text-center">
+              <h3 class="text-2xl font-bold mb-3">Our Mission</h3>
+              <div class="mb-4  flex items-center h-autoh-auto md:h-[130px]]">
+                  <img loading="lazy" src="/files/mision_1.webp" alt="Mission Icon" class="w-[100px] md:w-[130px] h-auto mx-auto filter brightness-0 invert"/>
+              </div>
                 <p class="mt-4 text-base">Delivering reliable, engineered solutions and customized cooling solutions while ensuring excellent customer service and satisfaction.</p>
             </div>
-            <div class="bg-[var(--brand)] text-white p-8 rounded-lg shadow-xl text-center">
-                <div class="mb-4">
-                    <img src="/files/vision_1.webp" alt="Vision Icon" class="w-16 h-16 mx-auto filter brightness-0 invert" />
-                </div>
-                <h3 class="text-2xl font-bold">Our Vision</h3>
+            <div class="bg-[var(--brand)] text-white px-8 py-8 md:py-12 rounded-[30px] text-center">
+              <h3 class="text-2xl font-bold mb-3">Our Vision</h3>
+              <div class="mb-4  flex items-centerh-auto md:h-[130px]]">
+                  <img loading="lazy" src="/files/vision_1.webp" alt="Vision Icon" class="w-[100px] md:w-[130px] h-auto mx-auto filter brightness-0 invert"/>
+              </div>
                 <p class="mt-4 text-base">To become a leading provider of sustainable air conditioning and refrigeration solutions with innovative technology and customer-focused services.</p>
             </div>
-            <div class="bg-[var(--brand)] text-white p-8 rounded-lg shadow-xl text-center">
-                <div class="mb-4">
-                    <img src="/files/value_1.webp" alt="Value Icon" class="w-16 h-16 mx-auto filter brightness-0 invert" />
-                </div>
-                <h3 class="text-2xl font-bold">Our Value</h3>
+            <div class="bg-[var(--brand)] text-white px-8 py-8 md:py-12 rounded-[30px] text-center">
+              <h3 class="text-2xl font-bold mb-3">Our Value</h3>
+              <div class="mb-4  flex items-centerh-auto md:h-[130px]]">
+                  <img loading="lazy" src="/files/value_1.webp" alt="Value Icon" class="w-[80px] h-auto mx-auto filter brightness-0 invert"/>
+              </div>
                 <p class="mt-4 text-base">We focus on enhancing customer needs with responsive services, delivering excellence with integrity, and providing reliable solutions with cutting-edge technology.</p>
             </div>
         </div>
     </section>
 
-    <section class="py-12 bg-white px-6 md:px-12 max-w-7xl mx-auto">
-         <h3 class="text-3xl md:text-[32px] text-center font-bold text-[var(--brand)] mb-8">
+    <section class="py-12 bg-white px-6 md:px-12 max-w-[1600px] mx-auto">
+         <h3 class="text-3xl md:text-[30px] text-center font-bold text-[var(--brand)] mb-8 md:mb-12">
              <span class="section-heading-underline">Our Clients</span>
          </h3>
-        <div class="grid grid-cols-4 sm:grid-cols-8 gap-6 md:gap-10 justify-items-center">
-            <img src="/files/logo/logo_1.webp" alt="Client Logo" class="h-12 w-auto object-contain opacity-75"/>
-            <img src="/files/logo/logo_2.webp" alt="Client Logo" class="h-12 w-auto object-contain opacity-75"/>
-            <img src="/files/logo/logo_3.webp" alt="Client Logo" class="h-12 w-auto object-contain opacity-75"/>
-            <img src="/files/logo/logo_4.webp" alt="Client Logo" class="h-12 w-auto object-contain opacity-75"/>
-            <img src="/files/logo/logo_5.webp" alt="Client Logo" class="h-12 w-auto object-contain opacity-75"/>
-            <img src="/files/logo/logo_6.webp" alt="Client Logo" class="h-12 w-auto object-contain opacity-75"/>
-            <img src="/files/logo/logo_7.webp" alt="Client Logo" class="h-12 w-auto object-contain opacity-75"/>
-            <img src="/files/logo/logo_8.webp" alt="Client Logo" class="h-12 w-auto object-contain opacity-75"/>
+        <div class="grid grid-cols-4 sm:grid-cols-8 gap-6 md:gap-10 justify-items-center items-center mt-10 mb-10">
+            <img loading="lazy" src="/files/logo/logo_1.webp" alt="Client Logo" class="object-contain"/>
+            <img loading="lazy" src="/files/logo/logo_2.webp" alt="Client Logo" class="object-contain"/>
+            <img loading="lazy" src="/files/logo/logo_3.webp" alt="Client Logo" class="object-contain"/>
+            <img loading="lazy" src="/files/logo/logo_4.webp" alt="Client Logo" class="object-contain"/>
+            <img loading="lazy" src="/files/logo/logo_5.webp" alt="Client Logo" class="object-contain"/>
+            <img loading="lazy" src="/files/logo/logo_6.webp" alt="Client Logo" class="object-contain"/>
+            <img loading="lazy" src="/files/logo/logo_7.webp" alt="Client Logo" class="object-contain"/>
+            <img loading="lazy" src="/files/logo/logo_8.webp" alt="Client Logo" class="object-contain"/>
         </div>
     </section>
 
     <section id="contact" class="bg-[var(--brand)] text-white py-10 px-6 md:px-12">
-      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
-          <h3 class="text-2xl font-bold">Have Any Question? Contact Us.</h3>
-          <p class="mt-2 text-sm opacity-90">Leave your name and contact details and we'll call back shortly.</p>
+          <h3 class="text-2xl md:text-[36px] leading-[40px] font-bold text-underliner mb-3">Have Any Question? <br>Contact Us.</h3>
+          <p class="mt-2 text-sm opacity-90 md:max-w-[350px]">Leave your information and email address. We will call back and advise you. </p>
         </div>
-        <form class="grid grid-cols-2 gap-3">
-          <input type="text" class="p-3 rounded-md text-gray-800" placeholder="Your Name" required/>
-          <input type="tel" class="p-3 rounded-md text-gray-800" placeholder="Phone Number" required/>
-          <input type="email" class="p-3 rounded-md text-gray-800 col-span-2" placeholder="Email" required/>
-          <textarea class="p-3 rounded-md text-gray-800 col-span-2" placeholder="Your Message" rows="2"></textarea>
-          <button type="submit" class="bg-white text-[var(--brand)] col-start-2 px-4 py-2 rounded-md font-semibold text-lg hover:bg-gray-100 transition duration-300">Submit</button>
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-3 gap-x-10">
+          <input type="text" class="p-3 rounded-md md:col-start-1 text-gray-800" placeholder="Your Name" required/>
+          <input type="tel" class="p-3 rounded-md md:col-start-1  text-gray-800" placeholder="Phone Number" required/>
+          <input type="email" class="p-3 rounded-md md:col-start-1  text-gray-800" placeholder="Email" required/>
+          <textarea class="p-3 rounded-md md:col-start-2 md:row-start-1 row-span-2  text-gray-800 " placeholder="Your Message" rows="2"></textarea>
+          <button type="submit" class="bg-white text-[var(--brand)] w-[fit-content] px-12 py-2 rounded-md font-semibold text-lg hover:bg-gray-100 transition duration-300">Submit</button>
         </form>
       </div>
     </section>
 
-    <section class="py-16 bg-white px-6 md:px-12 max-w-7xl mx-auto">
-        <h3 class="text-3xl md:text-[32px] text-center font-bold text-[var(--brand)] mb-8">
+    <section class="py-16 bg-white px-6 md:px-12 max-w-[1400px] mx-auto">
+        <h3 class="text-3xl md:text-[30px] text-center font-bold text-[var(--brand)] mb-8 md:mb-12">
             <span class="section-heading-underline">Our Team</span>
         </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-[80px] text-center">
             <div class="p-4 rounded-lg bg-white border-2 border-[var(--brand)]">
-                <img src="/files/team_1.webp" alt="Team Member: Divya Rana" class="">
-                <h4 class="font-bold text-xl text-gray-800">Pavitra Pokhrel</h4>
-                <p class="text-gray-500 text-base">(Coordinator)</p>
+                <img loading="lazy" src="/files/team_1.webp" alt="Team Member: Divya Rana" class="">
+                <h4 class="font-bold text-xl text-[var(--brand)] mt-2">Pavitra Pokhrel</h4>
+                <p class="text-[var(--brand)] text-base mb-5">(Coordinator)</p>
             </div>
             <div class="p-4 rounded-lg bg-white border-2 border-[var(--brand)]">
-                <img src="/files/team_2.webp" alt="Team Member: Gajender Singh" class="">
-                <h4 class="font-bold text-xl text-gray-800">Neelam Manik</h4>
-                <p class="text-gray-500 text-base">(Proprietor)</p>
+                <img loading="lazy" src="/files/team_2.webp" alt="Team Member: Gajender Singh" class="">
+                <h4 class="font-bold text-xl text-[var(--brand)] mt-2">Neelam Manik</h4>
+                <p class="text-[var(--brand)] text-base mb-5">(Proprietor)</p>
             </div>
             <div class="p-4 rounded-lg bg-white border-2 border-[var(--brand)]">
-                <img src="/files/team_3.webp" alt="Team Member: Rahul Verma" class="">
-                <h4 class="font-bold text-xl text-gray-800">Sanjay Manik</h4>
-                <p class="text-gray-500 text-base">(Service Head)</p>
+                <img loading="lazy" src="/files/team_3.webp" alt="Team Member: Rahul Verma" class="">
+                <h4 class="font-bold text-xl text-[var(--brand)] mt-2">Sanjay Manik</h4>
+                <p class="text-[var(--brand)] text-base mb-5">(Service Head)</p>
             </div>
         </div>
     </section>
   </main>
 
-  <footer class="bg-[var(--brand)] text-white py-8 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-6">
+  <footer class="bg-[var(--brand)] text-white py-8 md:py-20 px-6 md:px-12">
+    <div class="max-w-[1600px] mx-auto grid md:grid-cols-3 gap-6">
       <div>
-         <img src="/files/Logo_white.webp" alt="Manik Refrigeration Logo White" class="h-10 mb-2"/> 
-        <p class="text-sm opacity-90">Reliable commercial & residential HVAC solutions.</p>
-        <p class="text-sm opacity-90 mt-4">@ 2024 Manik Refrigeration. All Rights Reserved.</p>
+         <img loading="lazy" src="/files/Logo_white.webp" alt="Manik Refrigeration Logo White" class=" mb-2"/> 
+        
+        <p class="text-[16px] opacity-90 mt-6">We believe in transparent communication, ethical practices, and 
+          building long-term relationships based on trust.</p>
       </div>
-      <div>
-        <h5 class="text-white text-lg font-semibold mb-4">On Our Site</h5>
-        <ul class="text-sm space-y-2 opacity-90">
+      <div class="pl-0 lg:pl-[60px]">
+        <h5 class="text-white text-[20px] uppercase font-light mb-8">On Our Site</h5>
+        <ul class="text-sm space-y-6 opacity-90">
           <li><a href="#" class="hover:underline">Home</a></li>
           <li><a href="#about" class="hover:underline">About</a></li>
           <li><a href="#services" class="hover:underline">Services</a></li>
@@ -426,19 +497,30 @@
         </ul>
       </div>
       <div>
-        <h5 class="text-white text-lg font-semibold mb-4">Information</h5>
+        <h5 class="text-white text-[20px] uppercase font-light mb-8">Information</h5>
         <ul class="text-sm space-y-2 opacity-90">
-            <li>Email: sample@gmail.com</li>
-            <li>Phone: +91 7000 000 000</li>
-            <li>Address: [Your Business Address Here]</li>
+          <li class="flex gap-1 items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20px" style="fill:#fff"><path d="M224.2 89C216.3 70.1 195.7 60.1 176.1 65.4L170.6 66.9C106 84.5 50.8 147.1 66.9 223.3C104 398.3 241.7 536 416.7 573.1C493 589.3 555.5 534 573.1 469.4L574.6 463.9C580 444.2 569.9 423.6 551.1 415.8L453.8 375.3C437.3 368.4 418.2 373.2 406.8 387.1L368.2 434.3C297.9 399.4 241.3 341 208.8 269.3L253 233.3C266.9 222 271.6 202.9 264.8 186.3L224.2 89z"/></svg> +91 98110 35250</li>
+          <li class="flex gap-1 items-center"><svg width="20px" height="20px" viewBox="0 0 16 16" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M0 5.3585V14H16V5.35849L8 10.3585L0 5.3585Z" fill="#fff"/><path d="M16 3V2H0V3L8 8L16 3Z" fill="#fff"/></svg> Sanjaymaik@rediffmail.com  </li>
+          <li class="flex gap-1 items-center"><svg width="60px" height="40px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5742 21.8187C12.2295 22.0604 11.7699 22.0601 11.4253 21.8184L11.4228 21.8166L11.4172 21.8127L11.3986 21.7994C11.3829 21.7882 11.3607 21.7722 11.3325 21.7517C11.2762 21.7106 11.1956 21.6511 11.0943 21.5741C10.8917 21.4203 10.6058 21.1962 10.2641 20.9101C9.58227 20.3389 8.67111 19.5139 7.75692 18.4988C5.96368 16.5076 4 13.6105 4 10.3636C4 8.16134 4.83118 6.0397 6.32548 4.46777C7.82141 2.89413 9.86146 2 12 2C14.1385 2 16.1786 2.89413 17.6745 4.46777C19.1688 6.0397 20 8.16134 20 10.3636C20 13.6105 18.0363 16.5076 16.2431 18.4988C15.3289 19.5139 14.4177 20.3389 13.7359 20.9101C13.3942 21.1962 13.1083 21.4203 12.9057 21.5741C12.8044 21.6511 12.7238 21.7106 12.6675 21.7517C12.6393 21.7722 12.6171 21.7882 12.6014 21.7994L12.5828 21.8127L12.5772 21.8166L12.5754 21.8179L12.5742 21.8187ZM9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10Z" fill="#fff"/>
+              </svg> Head Office - 
+D-194, D D motor, First Floor, Pocket D, Okhla Phase I, New Delhi, Delhi 110020
+
+
+Branch Office -
+A-84/1, Ashrey-1 Sulab Awas Yojna Sector -1 Gomti Nagar Vistar Lucknow Uttar Pradesh 226010</li>
         </ul>
       </div>
       <div>
-         <h5 class="text-white text-lg font-semibold mb-4">Follow Us</h5>
+         <h5 class="text-white text-lg font-light mb-4">Follow Us</h5>
          <div class="flex gap-4 text-2xl">
-             <span class="w-6 h-6 bg-white rounded-full text-[var(--brand)] text-xs flex items-center justify-center font-bold">f</span>
-             <span class="w-6 h-6 bg-white rounded-full text-[var(--brand)] text-xs flex items-center justify-center font-bold">in</span>
-             <span class="w-6 h-6 bg-white rounded-full text-[var(--brand)] text-xs flex items-center justify-center font-bold">t</span>
+             <span class="w-6 h-6 bg-white rounded-[4px]  text-xs flex items-center justify-center font-bold"><svg fill="#01abed" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16 12v-.001c0-2.209-1.791-4-4-4s-4 1.791-4 4 1.791 4 4 4c1.104 0 2.104-.448 2.828-1.171.723-.701 1.172-1.682 1.172-2.768 0-.021 0-.042-.001-.063v.003zm2.16 0c-.012 3.379-2.754 6.114-6.135 6.114-3.388 0-6.135-2.747-6.135-6.135s2.747-6.135 6.135-6.135c1.694 0 3.228.687 4.338 1.797 1.109 1.08 1.798 2.587 1.798 4.256 0 .036 0 .073-.001.109v-.005zm1.687-6.406v.002c0 .795-.645 1.44-1.44 1.44s-1.44-.645-1.44-1.44.645-1.44 1.44-1.44c.398 0 .758.161 1.018.422.256.251.415.601.415.988v.029-.001zm-7.84-3.44-1.195-.008q-1.086-.008-1.649 0t-1.508.047c-.585.02-1.14.078-1.683.17l.073-.01c-.425.07-.802.17-1.163.303l.043-.014c-1.044.425-1.857 1.237-2.272 2.254l-.01.027c-.119.318-.219.695-.284 1.083l-.005.037c-.082.469-.14 1.024-.159 1.589l-.001.021q-.039.946-.047 1.508t0 1.649.008 1.195-.008 1.195 0 1.649.047 1.508c.02.585.078 1.14.17 1.683l-.01-.073c.07.425.17.802.303 1.163l-.014-.043c.425 1.044 1.237 1.857 2.254 2.272l.027.01c.318.119.695.219 1.083.284l.037.005c.469.082 1.024.14 1.588.159l.021.001q.946.039 1.508.047t1.649 0l1.188-.024 1.195.008q1.086.008 1.649 0t1.508-.047c.585-.02 1.14-.078 1.683-.17l-.073.01c.425-.07.802-.17 1.163-.303l-.043.014c1.044-.425 1.857-1.237 2.272-2.254l.01-.027c.119-.318.219-.695.284-1.083l.005-.037c.082-.469.14-1.024.159-1.588l.001-.021q.039-.946.047-1.508t0-1.649-.008-1.195.008-1.195 0-1.649-.047-1.508c-.02-.585-.078-1.14-.17-1.683l.01.073c-.07-.425-.17-.802-.303-1.163l.014.043c-.425-1.044-1.237-1.857-2.254-2.272l-.027-.01c-.318-.119-.695-.219-1.083-.284l-.037-.005c-.469-.082-1.024-.14-1.588-.159l-.021-.001q-.946-.039-1.508-.047t-1.649 0zm11.993 9.846q0 3.578-.08 4.953c.005.101.009.219.009.337 0 3.667-2.973 6.64-6.64 6.64-.119 0-.237-.003-.354-.009l.016.001q-1.375.08-4.953.08t-4.953-.08c-.101.005-.219.009-.337.009-3.667 0-6.64-2.973-6.64-6.64 0-.119.003-.237.009-.354l-.001.016q-.08-1.375-.08-4.953t.08-4.953c-.005-.101-.009-.219-.009-.337 0-3.667 2.973-6.64 6.64-6.64.119 0 .237.003.354.009l-.016-.001q1.375-.08 4.953-.08t4.953.08c.101-.005.219-.009.337-.009 3.667 0 6.64 2.973 6.64 6.64 0 .119-.003.237-.009.354l.001-.016q.08 1.374.08 4.953z"/></svg></span>
+             <span class="w-6 h-6 bg-white rounded-sm text-[var(--brand)] text-xs flex items-center justify-center font-bold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#01abed" d="M240 363.3L240 576L356 576L356 363.3L442.5 363.3L460.5 265.5L356 265.5L356 230.9C356 179.2 376.3 159.4 428.7 159.4C445 159.4 458.1 159.8 465.7 160.6L465.7 71.9C451.4 68 416.4 64 396.2 64C289.3 64 240 114.5 240 223.4L240 265.5L174 265.5L174 363.3L240 363.3z"/></svg></span>
+             <span class="w-6 h-6 bg-white rounded-[5px] p-1 text-[var(--brand)] text-xs flex items-center justify-center font-bold">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#01abed" d="M581.7 188.1C575.5 164.4 556.9 145.8 533.4 139.5C490.9 128 320.1 128 320.1 128C320.1 128 149.3 128 106.7 139.5C83.2 145.8 64.7 164.4 58.4 188.1C47 231 47 320.4 47 320.4C47 320.4 47 409.8 58.4 452.7C64.7 476.3 83.2 494.2 106.7 500.5C149.3 512 320.1 512 320.1 512C320.1 512 490.9 512 533.5 500.5C557 494.2 575.5 476.3 581.8 452.7C593.2 409.8 593.2 320.4 593.2 320.4C593.2 320.4 593.2 231 581.8 188.1zM264.2 401.6L264.2 239.2L406.9 320.4L264.2 401.6z"/></svg>
+             </span>  
+             <span class="w-6 h-6 bg-white rounded-[4px] text-[var(--brand)] text-xs flex items-center justify-center font-bold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#01abed" d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/></svg></span>
+             <span class="w-6 h-6 bg-white rounded-[4px] text-[var(--brand)] text-xs flex items-center justify-center font-bold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#01abed" d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z"/></svg></span>
          </div>
       </div>
     </div>
@@ -448,40 +530,94 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
   <script>
+    const prevArrowSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#01abed" d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"/></svg>';
+        
+        // Right arrow SVG (fa-chevron-right)
+        const nextArrowSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 20px; height: 20px;"><path fill="#01abed" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-192-192c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L362.7 256 201.4 417.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l192-192z"/></svg>';
+        
     $(document).ready(function(){
       // Initialize Slick Slider for the products section
-      $('.product-slider').slick({
-        slidesToShow: 4,      // Show 4 cards on desktop
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true,           // Enable dots for navigation
-        arrows: true,         // Enable custom arrows
-        responsive: [
-          {
+      $('.featured_car_slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    // UPDATED: Set centerPadding to '40px'
+    centerPadding: '40px', 
+    dots: false,
+    arrows: true,
+    prevArrow: '<button type="button" class="slick-prev">' + prevArrowSVG + '</button>',
+    nextArrow: '<button type="button" class="slick-next">' + nextArrowSVG + '</button>',
+    responsive: [
+        {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                // You might want to update centerPadding for breakpoints as well
+                // centerPadding: '20px', 
             }
-          },
-          {
-            breakpoint: 768,
+        },
+        {
+            breakpoint: 769,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                // centerPadding: '10px',
             }
-          },
-          {
+        },
+        {
             breakpoint: 600,
             settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                // centerPadding: '0px',
             }
-          }
-        ]
-      });
+        }
+    ]
+});
+$('.product-slider').slick({
+    slidesToShow: 3.5,
+    slidesToScroll: 1,
+    infinite: true,
+    // UPDATED: Set centerPadding to '40px'
+    centerPadding: '40px', 
+    dots: false,
+    arrows: true,
+    prevArrow: '<button type="button" class="slick-prev">' + prevArrowSVG + '</button>',
+    nextArrow: '<button type="button" class="slick-next">' + nextArrowSVG + '</button>',
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                // You might want to update centerPadding for breakpoints as well
+                // centerPadding: '20px', 
+            }
+        },
+        {
+            breakpoint: 769,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                // centerPadding: '10px',
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                // centerPadding: '0px',
+            }
+        }
+    ]
+});
+
     });
   </script>
 
 </body>
+
 </html>
+
