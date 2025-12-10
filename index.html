@@ -201,9 +201,20 @@ button.slick-prev.slick-arrow {
 
   <main class="">
     <section id="about" class="flex flex-col items-center min-[1200px]:flex-row mb-20">
-      <div class="w-full ">
-        <img loading="lazy" src="/files/img_1.webp" alt="Manik Refrigeration Team" class="object-cover w-full h-full" />
-      </div>
+<div class="w-full md:w-[48%] relative">
+
+  <!-- Background image for mobile only -->
+  <div class="absolute inset-0 bg-[url('/files/img_1.webp')] bg-cover bg-center md:hidden"></div>
+
+  <!-- Image for md+ only -->
+  <img 
+    loading="lazy" 
+    src="/files/img_1.webp" 
+    alt="Manik Refrigeration Team"
+    class="hidden md:block object-cover w-full h-full"
+  />
+</div>
+
     
       <div class="w-full  relative ">
         <div class="min-[1200px]:absolute min-[1200px]:right-0 min-[1200px]:top-1/2 min-[1200px]:-translate-y-1/2 w-full min-[1200px]:w-[104%] bg-[var(--brand)] px-8 md:px-[40px] py-10 md:py-[60px] min-[1200px]:rounded-l-[20px]">
@@ -620,5 +631,6 @@ $('.product-slider').slick({
 </body>
 
 </html>
+
 
 
