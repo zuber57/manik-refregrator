@@ -66,19 +66,42 @@
         gap: 0.5rem;
         /* position:relative */
     }
-   .logo_slider .slide {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
+  .logo_slider {
+  width: 100%;
+  position: relative;
 }
 
-.logo_slider img {
-    max-height: 80px;
-    width: auto;
-    display: block;
-    margin: auto;
+.logos_track {
+  display: flex;
+  gap: 40px;
 }
+
+.logo_slider .slide img {
+  width: 100px;
+  height: auto;
+}
+.logo_slider .slide {
+    align-items: center;
+    display: flex;
+}
+/* --- AUTO SCROLL ON MOBILE (below 768px) --- */
+@media (max-width: 1024px) {
+  .logo_slider {
+    overflow: hidden;
+  }
+
+  .logos_track {
+    animation: marquee 14s linear infinite;
+    width: max-content;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+/* --- SHOW 3 logos at a time below 440px --- */
 
 
 .text-underliner{
@@ -176,7 +199,9 @@ button.slick-prev.slick-arrow {
   font-size:20px;
   padding:10px 15px;
 }
+
     }
+    
     @media (max-width:500px) {
       .btn-brand {
        border-radius: 10px !important;
@@ -185,6 +210,16 @@ button.slick-prev.slick-arrow {
         font-size: 16px !important;
     }
     }
+    @media (max-width: 440px) {
+  .logos_track {
+    gap: 20px;
+  }
+
+  .slide img {
+    width: 90px;
+  }
+}
+
   </style>
 </head>
 <body class="antialiased bg-white">
@@ -573,17 +608,20 @@ timely support.</p>
          <h3 class="text-3xl md:text-[30px] text-center font-bold text-[var(--brand)] mb-8 md:mb-12">
              <span class="section-heading-underline">Our Clients</span>
          </h3>
-      <div class="logo_slider md:flex md:gap-10 md:items-center md:justify-center">
-    <div class="slide"><img src="/files/logo/logo_1.webp" alt="Client Logo"></div>
-    <div class="slide"><img src="/files/logo/logo_2.webp" alt="Client Logo"></div>
-    <div class="slide"><img src="/files/logo/logo_3.webp" alt="Client Logo"></div>
-    <div class="slide"><img src="/files/logo/logo_4.webp" alt="Client Logo"></div>
-    <div class="slide"><img src="/files/logo/logo_5.webp" alt="Client Logo"></div>
-    <div class="slide"><img src="/files/logo/logo_6.webp" alt="Client Logo"></div>
-    <div class="slide"><img src="/files/logo/logo_7.webp" alt="Client Logo"></div>
-    <div class="slide"><img src="/files/logo/logo_8.webp" alt="Client Logo"></div>
-    <div class="slide"><img src="/files/logo/logo_9.webp" alt="Client Logo"></div>
+    <div class="logo_slider overflow-hidden md:flex md:gap-10 md:items-center md:justify-center">
+    <div class="logos_track flex !gap-12">
+        <div class="slide"><img src="/files/logo/logo_1.webp" alt="Client Logo"></div>
+        <div class="slide"><img src="/files/logo/logo_2.webp" alt="Client Logo"></div>
+        <div class="slide"><img src="/files/logo/logo_3.webp" alt="Client Logo"></div>
+        <div class="slide"><img src="/files/logo/logo_4.webp" alt="Client Logo"></div>
+        <div class="slide"><img src="/files/logo/logo_5.webp" alt="Client Logo"></div>
+        <div class="slide"><img src="/files/logo/logo_6.webp" alt="Client Logo"></div>
+        <div class="slide"><img src="/files/logo/logo_7.webp" alt="Client Logo"></div>
+        <div class="slide"><img src="/files/logo/logo_8.webp" alt="Client Logo"></div>
+        <div class="slide"><img src="/files/logo/logo_9.webp" alt="Client Logo"></div>
+    </div>
 </div>
+
 
     </section>
 
@@ -731,22 +769,12 @@ A-84/1, Ashrey-1 Sulab Awas Yojna Sector -1 Gomti Nagar Vistar Lucknow Uttar Pra
         }
     ]
 });
+if ($(window).width() < 1024) {
+        const track = document.querySelector('.logos_track');
 
-        if ($(window).width() < 767) {
-           
-                $('.logo_slider').slick({
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 2000,
-                    infinite: true,
-                    arrows: false,
-                    dots: false,
-                    centerMode: true,
-                    centerPadding: '20px'
-                });
-            }
-       
+  // Duplicate the logos once to create the infinite loop effect
+  track.innerHTML += track.innerHTML;
+}
 
 $('.product-slider').slick({
     slidesToShow: 3.5,
