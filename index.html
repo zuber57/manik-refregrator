@@ -200,46 +200,54 @@ button.slick-prev.slick-arrow {
   </section>
 
   <main class="">
-    <section id="about" class="flex flex-col items-center min-[1200px]:flex-row mb-20">
-<div class="w-full md:w-[48%] relative">
+  <section id="about" class="flex flex-col md:flex-row mb-20">
 
-  <!-- Background image for mobile only -->
-  <div class="absolute inset-0 bg-[url('/files/img_1.webp')] bg-cover bg-center md:hidden"></div>
+  <!-- IMAGE BLOCK -->
+  <div class="w-full md:w-1/2 relative h-[300px] md:h-auto">
 
-  <!-- Image for md+ only -->
-  <img 
-    loading="lazy" 
-    src="/files/img_1.webp" 
-    alt="Manik Refrigeration Team"
-    class="hidden md:block object-cover w-full h-full"
-  />
-</div>
+    <!-- Mobile BG Image -->
+    <div class="absolute inset-0 bg-[url('/files/img_1.webp')] bg-cover bg-center md:hidden"></div>
 
-    
-      <div class="w-full  relative ">
-        <div class="min-[1200px]:absolute min-[1200px]:right-0 min-[1200px]:top-1/2 min-[1200px]:-translate-y-1/2 w-full min-[1200px]:w-[104%] bg-[var(--brand)] px-8 md:px-[40px] py-10 md:py-[60px] min-[1200px]:rounded-l-[20px]">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-            <span class="section-heading-underline after:bg-white after:h-[2px]">About Us</span>
-          </h2>
-          <p class="text-white text-base leading-relaxed mb-4">
-            With a collective experience of <b>over 25 years</b> in HVAC and refrigeration, our expert team at Manik Refrigeration Sales & Service
-            ensures precision, reliability, and excellence in every project.
-          </p>
-          <p class="text-white text-base leading-relaxed mb-4">
-            Recognized for its commitment to quality and reliability, Manik Refrigeration Sales & Service is a leading name in the refrigeration and<br>
-            air-conditioning sector. We operate across India with leading companies, handling projects in Cold Chain, Refrigeration, Fresh & Vegetable
-            Chillers (F&V), and VRF/VRV systems.
-          </p>
-          <p class="text-white text-base leading-relaxed mb-4">
-            We specialize in supplying, installing, commissioning, and maintaining a wide range of systems, including Cold Rooms, VRV/VRF systems, 
-            Refrigeration Units, and Air Conditioning equipment for major retail chains and businesses.
-          </p>
-          <p class="text-white text-base leading-relaxed mb-4">
-            To ensure smooth and trouble-free operation throughout the year, we also offer Annual Maintenance Contracts (AMC).
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- Image for md+ -->
+    <img 
+      src="/files/img_1.webp"
+      alt="Manik Refrigeration Team"
+      class="hidden md:block w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- CONTENT BLOCK -->
+  <div class="w-full md:w-1/2 bg-[var(--brand)] flex items-center">
+    <div class="px-8 md:px-10 py-10 md:py-14">
+
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        <span class="section-heading-underline after:bg-white after:h-[2px]">
+          About Us
+        </span>
+      </h2>
+
+      <p class="text-white leading-relaxed mb-4">
+        With a collective experience of <b>over 25 years</b> in HVAC and refrigeration...
+      </p>
+
+      <p class="text-white leading-relaxed mb-4">
+        Recognized for its commitment to quality and reliability...
+      </p>
+
+      <p class="text-white leading-relaxed mb-4">
+        We specialize in supplying, installing, commissioning...
+      </p>
+
+      <p class="text-white leading-relaxed">
+        To ensure smooth and trouble-free operation...
+      </p>
+
+    </div>
+  </div>
+
+</section>
+
 
 
     <section id="services" class="mb-24 px-6 md:px-12 max-w-[1600px] mx-auto">
@@ -631,6 +639,7 @@ $('.product-slider').slick({
 </body>
 
 </html>
+
 
 
 
